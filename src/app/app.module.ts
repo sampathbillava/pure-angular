@@ -6,19 +6,24 @@ import { AppComponent } from './app.component';
 import { TestFeaturesComponent } from './test/test-features/test-features.component';
 import { HideHtmlComponent } from './hide-html/hide-html.component';
 import { FormInputDirective } from './directives/form-input.directive';
+import { WaitForResponseComponent } from './wait-for-response/wait-for-response.component';
+import { WaitForResponseService } from './wait-for-response/service/wait-for-response.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestFeaturesComponent,
     HideHtmlComponent,
-    FormInputDirective
+    FormInputDirective,
+    WaitForResponseComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [WaitForResponseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
